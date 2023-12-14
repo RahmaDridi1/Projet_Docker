@@ -1,0 +1,67 @@
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Classificateur  du Genre Musical</title>
+    <style>
+        
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://www.wallpaperflare.com/static/486/641/283/digital-art-music-musical-notes-3d-wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #2c2f5a;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #8d97a3;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <form  action="/upload" method="post" enctype="multipart/form-data">
+        <h1>Prédiction du Genre Musical</h1>    
+        <input type="file" name="musicFile" id="musicFile" accept=".wav" required><br>
+        <button type="submit" >Prédire le Genre</button>
+    
+    <br><br>
+    <p style="color:rgb(93, 94, 96)"> {{result}} </p>
+        </form>
+    </div>
+
+
+</body>
+</html>
+
